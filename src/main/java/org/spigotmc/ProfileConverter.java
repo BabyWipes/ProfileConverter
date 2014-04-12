@@ -74,7 +74,7 @@ public class ProfileConverter
                 File destFile = new File( oldFolder, name + ".dat" );
                 if ( destFile.exists() )
                 {
-                    throw new RuntimeException( "Duplicate name " + name );
+                    destFile.delete(); // We want to overwrite and get their old data back
                 }
                 Files.copy( sourceFile, destFile );
                 success++;
